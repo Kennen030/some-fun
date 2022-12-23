@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .map {
+            position: relative;
+            width: 1200px;
+            height: 904px;
+            background: url(images/Konachan341375.jpg) no-repeat;
+        }
+
+        .box {
+            position: absolute;
+            top: 569px;
+            left: 127px;
+        }
+
+        .box2 {
+            top: 831px;
+            left: 398px;
+        }
+
+        .dotted {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ffffffa2;
+        }
+
+        .box div[class^="pulse"] {
+            /* 动画方法，让边框垂直、水平居中，放大后会从中心点向四周发散  */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: move1 2.1s linear infinite;
+            box-shadow: 0 0 29px #ffffff;
+        }
+
+        @keyframes move1 {
+            0% {}
+
+            70% {
+                /* 不能用 transform: scale:(2); 影子也会跟着变大，而且不能从中心向四周发散 */
+                width: 40px;
+                height: 40px;
+                /* 透明度 */
+                opacity: 1;
+            }
+
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+
+        }
+
+        /* 注意叠加权重 */
+        .map .box .pulse2 {
+            animation-delay: .7s;
+        }
+
+        .map .box .pulse3 {
+            animation-delay: 1.4s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <div class="box">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="box box2">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
+</body>
+<!-- 结构： -->
+<!-- 一个小圆点，三个波纹无限缩放 -->
+
+</html>
