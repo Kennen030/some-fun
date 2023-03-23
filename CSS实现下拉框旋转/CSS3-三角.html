@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 40px;
+            border: 2px solid #fcf;
+        }
+
+        div::after {
+            content: '';
+            position: absolute;
+            /* 伪元素默认是行内元素，不能设置大小 */
+            display: block;
+            top: 10px;
+            right: 13px;
+            width: 10px;
+            height: 10px;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            transform: rotate(-135deg);
+            transition: all 0.8s;
+        }
+
+        /* 鼠标经过 div 让里面的三角旋转 */
+        div:hover::after {
+            top: 17px;
+            right: 13px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+<!-- 伪元素默认是行内元素，不能设置大小 -->
+
+</html>
+<!-- 三角形做法：
+        1. 设置一个左边框，一个下边框
+        2. 然后旋转 -45deg
+-->
