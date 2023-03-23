@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="pre-box">
+            <h1>WELCOM</h1>
+            <p>JOIN US!</p>
+            <div class="img-box">
+                <img src="images/touxiang.png" alt="">
+            </div>
+        </div>
+        <div class="register-form">
+            <div class="title-box">
+                <h1>注册</h1>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="用户名">
+                <input type="password" placeholder="密码">
+                <input type="password" placeholder="确认密码">
+            </div>
+            <div class="btn-box">
+                <button>注册</button>
+                <p onclick="mySwitch()">已有账号？>去登入</p>
+            </div>
+        </div>
+        <div class="login-form">
+            <div class="title-box">
+                <h1>登入</h1>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="用户名">
+                <input type="password" placeholder="密码">
+            </div>
+            <div class="btn-box">
+                <button>登入</button>
+                <p onclick="mySwitch()">没有账号？>去注册</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let flag = true
+        const mySwitch = () => {
+            if (flag) {
+                $(".pre-box").css("transform", "translateX(100%)")
+                $(".pre-box").css("background-color", "#a0c7d7")
+                $("img").attr("src", "images/waoku.jpg")
+            } else {
+                $(".pre-box").css("transform", "translateX(0%)")
+                $(".pre-box").css("background-color", "rgb(253, 184, 184)")
+                $("img").attr("src", "images/touxiang.png")
+            }
+            flag = !flag
+        }
+    </script>
+</body>
+
+</html>

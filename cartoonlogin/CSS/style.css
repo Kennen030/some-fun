@@ -1,0 +1,180 @@
+* {
+    padding: 0;
+    margin: 0;
+
+    /* 定义一个元素的总高度和宽度包含内白那句和边框 */
+    /* 如果你将一个元素的 width 设为 100px，那么这 100px 会包含它的 border 和 padding，内容区的实际宽度是 width 减 去(border + padding) 的值。大多数情况下，这使得我们更容易地设定一个元素的宽高。 */
+    box-sizing: border-box;
+}
+
+input {
+    /* 取消文本框输入时的的边框 */
+    outline: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    /* 弹性布局 */
+    display: flex;
+    /* 渐变色 */
+    background: linear-gradient(to right, rgb(231, 191, 197), rgb(160, 200, 216))
+}
+
+.box {
+    position: relative;
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    /* background-color: #fff; */
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(240, 240, 240, 0.342);
+    box-shadow: 9px 5px 4px 3px rgba(0, 0, 0, 0.068);
+}
+
+.pre-box {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /* 一半的宽度 */
+    width: calc(1000px/2);
+    border-radius: 4px;
+    background-color: rgb(253, 184, 184);
+    box-shadow: 5px 4px 3px rgba(0, 0, 0, 0.1);
+    /* 属性设置元素当过渡效果 */
+    /* 规定以慢速开始和结束的过渡效果 */
+    transition: 0.5s ease-in-out;
+}
+
+.pre-box h1 {
+    margin-top: 150px;
+    text-align: center;
+    /* 设置为h1元素的字母间距： */
+    letter-spacing: 5px;
+    color: #fff;
+    text-shadow: 5px 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pre-box p {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 5px 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+.img-box {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    border-radius: 50%;
+    /* 溢出修剪 */
+    overflow: hidden;
+    box-shadow: 5px 4px 3px rgba(87, 87, 87, 0.068);
+}
+
+.img-box img {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.login-form,
+.register-form {
+    /* 让所有弹性盒子的子元素都相同长度，并且忽略它们内部的内容； */
+    flex: 1;
+    height: 100%;
+
+}
+
+.title-box {
+    height: 300px;
+    line-height: 500px;
+}
+
+.title-box h1 {
+    text-align: center;
+    /* 设置为h1元素的字母间距： */
+    letter-spacing: 5px;
+    color: #fff;
+    text-shadow: 5px 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+.input-box {
+    display: flex;
+    /* 弹性盒子里面的盒子垂直显示 */
+    flex-direction: column;
+    /* 弹性盒子里的盒子居中对齐 */
+    align-items: center;
+}
+
+input {
+    width: 60%;
+    height: 40px;
+    margin-bottom: 20px;
+    /* 规定文本块中首行文本的缩进 */
+    text-indent: 4px;
+    border: 1px solid rgb(182, 182, 182);
+    /* 圆角 */
+    border-radius: 4px 8px 8px 8px;
+}
+
+/* :focus选择器用于选择具有焦点的元素 */
+input:focus {
+    /* 里面的字体颜色为红色 */
+    color: rgb(247, 16, 16);
+    /* 点击后的输入框背景为天蓝色 */
+    background-color: rgb(191, 243, 247);
+}
+
+/* 鼠标啊点击文本框后不显示提示文字 */
+/* 伪元素::placeholder设置文本框里提示的字体 */
+input:focus::placeholder {
+    /* 元素透明 */
+    opacity: 0;
+}
+
+.btn-box {
+    display: flex;
+    /* justify-content 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。 */
+    /* 居中 */
+    justify-content: center;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(89, 170, 245);
+    color: #fff;
+    margin-right: 7px;
+}
+
+button:hover {
+    /* 鼠标指针放在一个元素边界范围内时所用的光标形状 */
+    /* 光标显示为一只手 */
+    cursor: pointer;
+    /* 设置一个元素了透明度级别 */
+    opacity: .8;
+}
+
+.btn-box p {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.btn-box p:hover {
+    /* 鼠标指针放在一个元素边界范围内时所用的光标形状 */
+    /* 光标显示为一只手 */
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+}
