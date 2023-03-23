@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .big { */
+        /* width: 1200px; */
+        /* display: flex; */
+        /* flex-wrap: wrap; */
+        /* margin: -2px 0 0 -2px; */
+        /* gap: 2px; */
+        /* } */
+
+        /* .box1,
+        .box2 {
+            float: left;
+            width: 290px;
+            height: 370px;
+            margin: 2px 0 0 2px;
+            background-color: #c2c2c2;
+        } */
+
+        /* .box3,
+        .box4,
+        .box5,
+        .box6,
+        .box7,
+        .box8,
+        .box9,
+        .box10 {
+            float: left;
+            width: 290px;
+            height: 180px;
+            margin: 2px 0 4px 2px;
+            background-color: #f59898;
+        } */
+
+        .big {
+            width: 1200px;
+            height: 800px;
+            display: grid;
+            grid-template-areas:
+                "box1 box2 box3 box4"
+                "box1 box2 box5 box6"
+                "box7 box8 box9 box10"
+            ;
+            gap: 5px;
+            background-color: #c2c2c2;
+        }
+
+        .box1 {
+            grid-area: box1;
+        }
+
+        .box2 {
+            grid-area: box2;
+        }
+
+        .box3 {
+            grid-area: box3;
+        }
+
+        .box4 {
+            grid-area: box4;
+        }
+
+        .box5 {
+            grid-area: box5;
+        }
+
+        .box6 {
+            grid-area: box6;
+        }
+
+        .box7 {
+            grid-area: box7;
+        }
+
+        .box8 {
+            grid-area: box8;
+        }
+
+        .box9 {
+            grid-area: box9;
+        }
+
+        .box10 {
+            grid-area: box10;
+        }
+
+        div:nth-child(-n+2) {
+            width: 290px;
+            height: 370px;
+            background-color: #fa5353;
+        }
+
+        div:nth-child(n+3) {
+            width: 290px;
+            height: 180px;
+            background-color: #fa5353;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+        <div class="box10"></div>
+    </div>
+</body>
+
+</html>

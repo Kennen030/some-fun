@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.grid {
+    /* 定义网格布局 */
+    display: grid;
+    /* 定义 2 列的网格 */
+    /* grid-template-columns: 1fr 1fr; */
+
+    /* 中间添加 2 列 的 500px 大小的网格 */
+    grid-template-columns: 1fr 1fr;
+
+
+    /* 当需要具体指定行时，需要这个属性 */
+    /* 不设置时行会自动更具其中内容适配 */
+    /* 定义 5 行的网格 */
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        /* .不会填满右边的空间 */
+        "title title"
+        "header header"
+        "sidebar sidebar"
+        "content content"
+        "footer footer";
+    grid-gap: 10px;
+}
+
+.title {
+    /* grid-column 属性定义了网格元素列的开始和结束位置 */
+    /* 定义title网格从的第1列开始，从第3列之前结束 */
+    /* grid-column-start: 1; */
+    /* grid-column-end: 3; */
+    /* grid-column: 1/3 ; */
+
+    /* 设置 "title" 跨越 2 列： */
+    /* grid-column-end: span 2; */
+
+    /* 设置 "title" 跨越 2 行： */
+    /* grid-row-end: span 2; */
+
+    grid-area: title;
+}
+
+.header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: content;
+    /* 设置 "content" 的大小为自己文本的大小 */
+    /* 让自己靠左 */
+    /* justify-self: start; */
+
+    /* 让自己靠右 */
+    /* justify-self: end; */
+
+    /* 居中 */
+    /* justify-self: center; */
+
+    /* 在网格 "content" 中嵌套网格 */
+    /* 定义网格布局 */
+    /* display: grid; */
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* 选择.grid盒子里的div盒子里的全部偶数位盒子 */
+.grid div:nth-child(even) {
+    background-color: rgb(253, 123, 123);
+}
+
+.grid div:nth-child(odd) {
+    background-color: rgb(148, 148, 255);
+}
+
+/* 文档宽度小于 300 像素则切换成PC端布局 */
+/* PC端 */
+@media screen and (min-width: 736px) {
+    .grid {
+        /* 定义网格布局 */
+        display: grid;
+        /* 定义 2 列的网格 */
+        /* grid-template-columns: 1fr 1fr; */
+
+        /* 中间添加 2 列 的 500px 大小的网格 */
+        grid-template-columns: 1fr 500px 500px 1fr;
+
+
+        /* 当需要具体指定行时，需要这个属性 */
+        /* 不设置时行会自动更具其中内容适配 */
+        /* 定义 5 行的网格 */
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            /* .不会填满右边的空间 */
+            ". title title ."
+            ". header header ."
+            ". sidebar content ."
+            ". footer footer .";
+    }
+}
