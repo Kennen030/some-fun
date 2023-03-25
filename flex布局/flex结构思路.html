@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #eee;
+        }
+
+        .boxShdow {
+            box-shadow: 0px 2px 3px #00000060;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        #sidebar {
+            width: 200px;
+        }
+
+        .white {
+            background: #fff;
+        }
+
+        .flex1 {
+            flex: 1;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+
+        .head {
+            height: 60px;
+        }
+
+        #left {
+            flex: 3;
+        }
+
+        #right {
+            flex: 1;
+        }
+
+        #prompt {
+            height: 150px;
+        }
+
+        #news {
+            height: 300px;
+        }
+
+        .mg8 {
+            margin: 8px;
+        }
+
+        .mgr8 {
+            margin-right: 8px;
+        }
+
+        .mgt8 {
+            margin-top: 8px;
+        }
+
+        .ofa {
+            overflow: auto;
+        }
+
+        .h160 {
+            height: 160px;
+        }
+
+        .h100 {
+            height: 100px;
+        }
+
+        .zIndex {
+            z-index: 10;
+        }
+
+        .touxiang {
+            width: 40px;
+            height: 40px;
+            background-color: #ff4949;
+            border-radius: 50%;
+        }
+
+        .mg10 {
+            margin: 10px;
+        }
+
+        .touxiangqu {
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width:600px) {
+            #sidebar {
+                display: none;
+            }
+
+            #neiRong {
+                flex-direction: column;
+            }
+
+            #shuJu {
+                flex-direction: column;
+            }
+
+            #right {
+                margin-left: 8px;
+            }
+
+            .shuJuQuai {
+                margin: 0 0 8px 0;
+                flex: auto;
+            }
+        }
+
+        /* 去除滚动条 */
+        #neiRong::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="flex">
+    <!-- 侧边栏 -->
+    <div class="white boxShdow zIndex" id="sidebar">
+        <!-- 头像 -->
+        <div class="flex touxiangqu">
+            <div class="touxiang boxShdow mg10"></div><span>蔡徐坤</span>
+        </div>
+        <!-- 导航栏 -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- 主区域 -->
+    <div class="flex flex1 column">
+        <!-- 头部栏 -->
+        <div class="head boxShdow white zIndex"></div>
+        <!-- 内容区 -->
+        <div class="flex flex1 ofa" id="neiRong">
+            <!-- 左 -->
+            <div class="flex column mg8" id="left">
+                <!-- 数据区 -->
+                <div class="flex" id="shuJu">
+                    <!-- 数据块 -->
+                    <div class="shuJuQuai flex1 boxShdow h100 white mgr8"></div>
+                    <div class="shuJuQuai flex1 boxShdow h100 white mgr8"></div>
+                    <div class="shuJuQuai flex1 boxShdow h100 white mgr8"></div>
+                    <div class="shuJuQuai flex1 boxShdow h100 white"></div>
+                </div>
+                <!-- 列表区 -->
+                <div class="flex column">
+                    <div class="h160 boxShdow white mgt8"></div>
+                    <div class="h160 boxShdow white mgt8"></div>
+                    <div class="h160 boxShdow white mgt8"></div>
+                    <div class="h160 boxShdow white mgt8"></div>
+                    <div class="h160 boxShdow white mgt8"></div>
+                    <div class="h160 boxShdow white mgt8"></div>
+                </div>
+            </div>
+            <!-- 右 -->
+            <div class="flex column mgt8 mgr8" id="right">
+                <!-- 提示区 -->
+                <div id="prompt" class="white boxShdow"></div>
+                <!-- 消息区 -->
+                <div id="news" class="white mgt8 boxShdow"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
